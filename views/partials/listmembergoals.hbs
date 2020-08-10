@@ -1,0 +1,37 @@
+<table class="ui celled padded table">
+  <thead>
+    <tr>
+      <th>Start Date</th>
+      <th>Target Date</th>
+      <th>Measurement Type</th>
+      <th>Target Measurement</th>
+      <th>Goal Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each goals}}
+      <tr>
+        <td>
+          {{goal.startDate}}
+        </td>
+        <td>
+          {{goal.targetDate}}
+        </td>
+        <td>
+          {{goal.measurementType}}
+        </td>
+        <td>
+          {{goal.targetMeasurement}}
+        </td>
+        <td>
+          {{goalStatus}}
+        </td>
+        <td>
+          <a href="/goals/deletemembergoal/{{../user.id}}/{{goal.id}}" class="ui icon button">
+            <i class="red trash alternate outline icon"></i>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

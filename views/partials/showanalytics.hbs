@@ -1,0 +1,15 @@
+<table class="ui fixed table">
+    <tbody class="ui centered aligned">
+    <tr>
+        <th class="center aligned"><i class="huge blue user icon"></i> <BR>  {{user.memberName}} </th>
+        <th class="center aligned">
+            {{#if idealWeightIndicator}}
+                <i class="huge green dashboard icon"></i>
+            {{else}}
+                <i class="huge red dashboard icon"></i>
+            {{/if}} <BR> IDEAL WEIGHT INDICATOR</th>
+        <th class="center aligned"><i class="huge red heartbeat icon"></i> {{calculatedBMI}} <BR> BMI</th>
+        <th class="center aligned"><i class="huge blue doctor icon"></i> <BR> {{bmiCategory}} </th>
+    </tr>
+    </tbody>
+</table>

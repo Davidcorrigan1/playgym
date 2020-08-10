@@ -1,0 +1,35 @@
+<form class="ui stacked segment form" action="/goals/addgoal" method="POST">
+  <div class="three fields">
+    <div class="field">
+      <label>Target Date</label>
+      <div class="ui calendar" id="example1">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="date" placeholder="Date/Time" name="targetDate">
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Measurement Type</label>
+      <select name="measurementType" class="ui dropdown" id="select">
+        <option value="">Measurement Type</option>
+        <option value="weight">Weight</option>
+        <option value="waist">Waist</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Target Measurement</label>
+      <input placeholder="00.00cm/kg" type="text" name="targetMeasurement">
+    </div>
+  </div>
+  <button class="ui blue submit button">Add Goal</button>
+</form>
+
+<script>
+  $('#example1').calendar();
+  
+  $('#select')
+  .dropdown()
+;
+</script>
+

@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "memberName": "David Corrigan",
+      "gender": "Male",
+      "email": "davidcorrigan1@gmail.com",
+      "password": "Pass1976",
+      "address": "Killincooley",
+      "height": "1.77",
+      "startingWeight": "79",
+      "id": "9135cee0-d711-11ea-8d9f-27db894e89a6"
+    },
+    {
+      "memberName": "Joshua Corrigan",
+      "gender": "Male",
+      "email": "joshuacorrigan@gmail.com",
+      "password": "Pass1976",
+      "address": "Killincooley",
+      "height": "1.4",
+      "startingWeight": "45",
+      "id": "f0c16240-d737-11ea-9236-578b467b638a"
+    }
+  ]
+}

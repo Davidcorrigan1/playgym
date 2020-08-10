@@ -1,0 +1,12 @@
+{
+  "trainers": [
+    {
+      "trainerName": "James Corrigan",
+      "gender": "Male",
+      "email": "jamescorrigan@gmail.com",
+      "password": "Pass1976",
+      "address": "Wexford",
+      "id": "fc8bfe40-d332-11ea-b8d3-0ba5198a37c8"
+    }
+  ]
+}
