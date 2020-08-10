@@ -39,6 +39,14 @@
       "targetDate": "2020-08-08",
       "targetMeasurement": "23",
       "measurementType": "waist"
+    },
+    {
+      "id": "8189bfe0-db4b-11ea-a058-a9ccee573e90",
+      "userid": "5fd116f0-db4b-11ea-a058-a9ccee573e90",
+      "startDate": "2020-8-10",
+      "targetDate": "2020-08-31",
+      "targetMeasurement": "70",
+      "measurementType": "weight"
     }
   ]
 }

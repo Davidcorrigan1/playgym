@@ -9,16 +9,24 @@ const accounts = require("./accounts.js");
 const analytics = require("./analytics.js");
 
 const goals = {
-  /* This method will render the main goals view passing the user and assessment details
-   */
+  
+  /*-----------------------------------------------------------------------------------
+  / This method will render the main goals view passing the user and assessment details
+  /----------------------------------------------------------------------------------*/
   index(request, response) {
     logger.info("goals rendering");
     const loggedInUser = accounts.getCurrentUser(request);
 
+    // Calculate BMI data for the analytics section of the page
     let calculatedBMI = analytics.calculateBMI(loggedInUser.id);
     calculatedBMI = Math.round(calculatedBMI * 100.0) / 100.0;
-
+    const calculatedBMICategory = analytics.calculateBMICategory(calculatedBMI);
+    
+    // Retrieves the Array of goal objects from the json model
     let goals = goalStore.getUserGoals(loggedInUser.id);
+    
+    // Retrieves the Array of assessment objects from the json model
+    // Sorts the objects in the array by the date decending. 
     let assessments = assessmentStore.getUserAssessments(loggedInUser.id);
     assessments.sort(function(a, b) {
       let dateA = new Date(a.dateTime),
@@ -26,12 +34,11 @@ const goals = {
       return dateB - dateA;
     });
 
+    // the latest assessment date if in position [0] now. Or is the starting weigh if no assessments.
     let latestWeight = loggedInUser.startingWeight;
     if (assessments.length > 0) {
       latestWeight = assessments[0].weight;
     }
-
-    const calculatedBMICategory = analytics.calculateBMICategory(calculatedBMI);
     
     // add goal status to array of goals (in a new array)
     let goalsStatus = [];
@@ -40,6 +47,7 @@ const goals = {
       goalsStatus.push({goal: goals[t], goalStatus: goalStatus});
     }
     
+    // Create an object of data to pass to the goals view and render it.
     const viewData = {
       title: "Goals Dashboard",
       user: loggedInUser,
@@ -55,15 +63,29 @@ const goals = {
     response.render("goals", viewData);
   },
   
+  /*-----------------------------------------------------------------------------------
+  / This method will render the main goals view passing the user and assessment details
+  / This is the version used when the member details are display from the trainer logon.
+  /----------------------------------------------------------------------------------*/
   memberDisplay(request, response) {
-    logger.info("goals rendering");
+    logger.info("Member goals rendering");
     
+    // Use the id of the member selected, which is passed in the path.
     const currentMember = userStore.getUserById(request.params.memberId);
+    
+    // Checks the current trainer who is logged on via the cookies useraccount id 
+    const loggedInUser = accounts.getCurrentTrainer(request);
 
+    // Calulate the BMI data for analytics section of the page
     let calculatedBMI = analytics.calculateBMI(currentMember.id);
     calculatedBMI = Math.round(calculatedBMI * 100.0) / 100.0;
+    const calculatedBMICategory = analytics.calculateBMICategory(calculatedBMI);
 
+    // Retrieve the array of goal objects from the json model.
     let goals = goalStore.getUserGoals(currentMember.id);
+    
+    // Retrieves the Array of assessment objects from the json model
+    // Sorts the objects in the array by the date decending. 
     let assessments = assessmentStore.getUserAssessments(currentMember.id);
     assessments.sort(function(a, b) {
       let dateA = new Date(a.dateTime),
@@ -71,12 +93,11 @@ const goals = {
       return dateB - dateA;
     });
 
+    // the latest assessment date if in position [0] now. Or is the starting weigh if no assessments.
     let latestWeight = currentMember.startingWeight;
     if (assessments.length > 0) {
       latestWeight = assessments[0].weight;
     }
-
-    const calculatedBMICategory = analytics.calculateBMICategory(calculatedBMI);
     
     // add goal status to array of goals (in a new array)
     let goalsStatus = [];
@@ -85,6 +106,7 @@ const goals = {
       goalsStatus.push({goal: goals[t], goalStatus: goalStatus});
     }
     
+    // Create an object of data to pass to the goals view and render it.
     const viewData = {
       title: "Goals Dashboard",
       user: currentMember,
@@ -100,8 +122,9 @@ const goals = {
     response.render("membergoals", viewData);
   },
 
-  /* This method will add an goal to the goalCollection in the json file
-   */
+  /*-----------------------------------------------------------------------------------
+  / This method will add an goal to the goalCollection in the json file
+  /----------------------------------------------------------------------------------*/
   addGoal(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     const goals = goalStore.getUserGoals(loggedInUser.id);
@@ -125,8 +148,10 @@ const goals = {
     response.redirect("/goals");
   },
   
-  /* This method will add an goal to the goalCollection in the json file
-   */
+  /*-----------------------------------------------------------------------------------
+  / This method will add an goal to the goalCollection in the json file.
+  / This method is called when the goal is added for a member from a trainer logon.
+  /----------------------------------------------------------------------------------*/
   addMemberGoal(request, response) {
     const currentMember = userStore.getUserById(request.params.memberId);
     const goals = goalStore.getUserGoals(currentMember.id);
@@ -162,6 +187,7 @@ const goals = {
   
   /*-----------------------------------------------------------------------------------
   / This method will delete a users goal from the goalCollection in the json file
+  / This method is called when the goal is added for a member from a trainer logon.
   /----------------------------------------------------------------------------------*/
   deleteMemberGoal(request, response) {
     const currentMember = userStore.getUserById(request.params.memberId);

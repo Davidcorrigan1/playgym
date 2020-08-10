@@ -15,21 +15,25 @@ const dashboard = {
     logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
     
+    // Calculate the BMI data for the analytics part of the page
     let calculatedBMI = analytics.calculateBMI(loggedInUser.id);
     calculatedBMI = Math.round(calculatedBMI * 100.0 ) / 100.0;
+    const calculatedBMICategory = analytics.calculateBMICategory(calculatedBMI);
     
+    // Retrieve tge users assessments and sort by date decending.
     let assessments = assessmentStore.getUserAssessments(loggedInUser.id);
     assessments.sort(function(a, b) {
       let dateA = new Date(a.dateTime), dateB = new Date(b.dateTime);
       return dateB - dateA;
     });  
     
+    // Latest weight is the assessment in position [0] or the starting weight if no assessments
     let latestWeight = loggedInUser.startingWeight;
     if (assessments.length > 0) {
       latestWeight = assessments[0].weight;
     }
 
-    const calculatedBMICategory = analytics.calculateBMICategory(calculatedBMI);
+    // Create an object of data to send to the dashboard and then render the page.
     const viewData = {
       title: "Assessment Dashboard",
       user: loggedInUser,
@@ -95,7 +99,19 @@ const dashboard = {
       weightIncrease: weightIncrease
     };
     logger.debug("Creating a new Assessment", newAssessment);
-    assessmentStore.addAssessment(newAssessment);
+    
+    // If all the required data is entered then update the json with the new assessment.
+    if ((request.body.weight !== null && request.body.weight !== "") &&
+        (request.body.chest !== null && request.body.chest !== "") &&
+        (request.body.thigh !== null && request.body.thigh !== "") &&
+        (request.body.upperArm !== null && request.body.upperArm !== "") &&
+        (request.body.waist !== null && request.body.waist !== "") &&
+        (request.body.hips !== null && request.body.hips !== "")) {
+           
+           assessmentStore.addAssessment(newAssessment);
+         };
+    
+    // Display the dashboard
     response.redirect("/dashboard");
   }
 };
