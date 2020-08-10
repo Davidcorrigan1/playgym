@@ -19,6 +19,16 @@
       "height": "1.4",
       "startingWeight": "45",
       "id": "f0c16240-d737-11ea-9236-578b467b638a"
+    },
+    {
+      "memberName": "Hugh Corrigan",
+      "gender": "Male",
+      "email": "hughcorrigan@gmail.com",
+      "password": "Pass1976",
+      "address": "Blackwater, Gorey, Wexford",
+      "height": "1.77",
+      "startingWeight": "73",
+      "id": "5fd116f0-db4b-11ea-a058-a9ccee573e90"
     }
   ]
 }
