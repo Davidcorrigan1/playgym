@@ -1,0 +1,58 @@
+<table class="ui celled padded table">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Weight</th>
+      <th>Chest</th>
+      <th>Thigh</th>
+      <th>Upper Arm</th>
+      <th>Waist</th>
+      <th>Hips</th>
+      <th>Trend</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>
+          {{dateTime}}
+        </td>
+        <td>
+          {{weight}}
+        </td>
+        <td>
+          {{chest}}
+        </td>
+        <td>        
+          {{thigh}}
+        </td>      
+        <td>
+          {{upperArm}}
+        </td>
+        <td>
+          {{waist}}
+        </td>
+        <td>
+          {{hips}}
+        </td>
+        <td>
+          {{#if weightIncrease}}
+                <i class="red large chevron circle up icon"></i>
+          {{else}}
+                <i class="green large chevron circle down icon"></i>
+          {{/if}} 
+        </td>
+        <td>
+          {{comment}}
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+<form class="ui form" action="/memberdashboard/addcomment/{{userid}}/{{id}}" method="POST">
+    <div class="field">
+        <label>Comment</label>
+        <input type="text" name="comment">
+    </div>
+    <button class="ui blue submit button">Update</button>
+</form>

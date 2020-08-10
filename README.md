@@ -1,2 +1,4 @@
-# playgym
-playgym project for WIT HDip ICT1
+Welcome to the Playgym Application
+=========================
+
+Version 1 of the Playgym application

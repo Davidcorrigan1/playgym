@@ -1,0 +1,22 @@
+<table class="ui table">
+    <tbody>
+    {{#each members}}
+        <tr>
+            <td>
+                <h4 class="ui image header">
+                    <i class="github icon"></i>
+                    <div class="content">
+                        <a href="/trainerdashboard/member/{{member.id}}"> {{member.memberName}} </a>
+                        <a href="/trainerdashboard/deletemember/{{member.id}}">
+                            <i class="large red trash alternate outline icon"></i>
+                        </a>
+                        <div class="sub header">
+                            {{count}} assessment(s)
+                        </div>
+                    </div>
+                </h4>
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
