@@ -61,7 +61,7 @@ const trainerdashboard = {
     let assessments = assessmentStore.getUserAssessments(currentMember.id);
     
     // loop through the deleted members assessments and delete then from the json.
-    for (let t=0; t <= assessments.length; t++) {
+    for (let t=0; t < assessments.length; t++) {
       assessmentStore.removeAssessment(assessments[t].id);
     }
 

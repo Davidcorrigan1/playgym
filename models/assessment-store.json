@@ -334,17 +334,17 @@
       "weightIncrease": false
     },
     {
-      "id": "6edc1a50-db4b-11ea-a058-a9ccee573e90",
-      "userid": "5fd116f0-db4b-11ea-a058-a9ccee573e90",
-      "dateTime": "2020-8-10 20:52:41",
-      "weight": "74",
-      "chest": "39",
+      "id": "0beeda00-db54-11ea-9192-452470c0ca71",
+      "userid": "fe4191e0-db53-11ea-9192-452470c0ca71",
+      "dateTime": "2020-8-10 21:54:21",
+      "weight": "60",
+      "chest": "34",
       "thigh": "23",
       "upperArm": "17",
-      "waist": "34",
-      "hips": "35",
-      "comment": "Need to work more",
-      "weightIncrease": true
+      "waist": "33",
+      "hips": "33",
+      "comment": "",
+      "weightIncrease": false
     }
   ]
 }

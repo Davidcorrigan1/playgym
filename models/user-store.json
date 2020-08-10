@@ -21,14 +21,14 @@
       "id": "f0c16240-d737-11ea-9236-578b467b638a"
     },
     {
-      "memberName": "Hugh Corrigan",
-      "gender": "Male",
-      "email": "hughcorrigan@gmail.com",
+      "memberName": "Mary Corrigan",
+      "gender": "Female",
+      "email": "marycorrigan@gmail.com",
       "password": "Pass1976",
-      "address": "Blackwater, Gorey, Wexford",
-      "height": "1.77",
-      "startingWeight": "73",
-      "id": "5fd116f0-db4b-11ea-a058-a9ccee573e90"
+      "address": "Oulart, Gorey, Wexford",
+      "height": "1.5",
+      "startingWeight": "65",
+      "id": "fe4191e0-db53-11ea-9192-452470c0ca71"
     }
   ]
 }
