@@ -34,6 +34,20 @@ const goals = {
       return dateB - dateA;
     });
 
+    // check the users goals to calculate counts of each goal status
+    let openCount = 0; let missedCount = 0; let achievedCount = 0;
+    let goalStatus;
+    for (let t = 0; t < goals.length; t++) {
+      goalStatus = analytics.calcGoalStatus(goals[t], assessments);
+      if (goalStatus === "Open") {
+        openCount ++;
+      } else if (goalStatus === "Missed") {
+        missedCount++; 
+      } else {
+        achievedCount++;
+      }
+    }
+    
     // the latest assessment date if in position [0] now. Or is the starting weigh if no assessments.
     let latestWeight = loggedInUser.startingWeight;
     if (assessments.length > 0) {
@@ -57,7 +71,10 @@ const goals = {
       idealWeightIndicator: analytics.checkIdealWeight(
         loggedInUser.id,
         latestWeight
-      )
+      ),
+      openCount: openCount,
+      missedCount: missedCount,
+      achievedCount: achievedCount
     };
     logger.info("about to render goals", viewData);
     response.render("goals", viewData);
@@ -93,6 +110,20 @@ const goals = {
       return dateB - dateA;
     });
 
+    // Check the users goals to calculate counts of each goal status
+    let openCount = 0; let missedCount = 0; let achievedCount = 0;
+    let goalStatus;
+    for (let t = 0; t < goals.length; t++) {
+      goalStatus = analytics.calcGoalStatus(goals[t], assessments);
+      if (goalStatus === "Open") {
+        openCount ++;
+      } else if (goalStatus === "Missed") {
+        missedCount++; 
+      } else {
+        achievedCount++;
+      }
+    }
+    
     // the latest assessment date if in position [0] now. Or is the starting weigh if no assessments.
     let latestWeight = currentMember.startingWeight;
     if (assessments.length > 0) {
@@ -116,7 +147,10 @@ const goals = {
       idealWeightIndicator: analytics.checkIdealWeight(
         currentMember.id,
         latestWeight
-      )
+      ),
+      openCount: openCount,
+      missedCount: missedCount,
+      achievedCount: achievedCount
     };
     logger.info("about to render goals", viewData);
     response.render("membergoals", viewData);
