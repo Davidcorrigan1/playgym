@@ -2,6 +2,7 @@
 
 const logger = require("../utils/logger");
 const assessmentStore = require("../models/assessment-store");
+const goalStore = require("../models/goal-store");
 const uuid = require("uuid");
 const accounts = require("./accounts.js");
 const analytics = require("./analytics.js");
@@ -20,12 +21,27 @@ const dashboard = {
     calculatedBMI = Math.round(calculatedBMI * 100.0 ) / 100.0;
     const calculatedBMICategory = analytics.calculateBMICategory(calculatedBMI);
     
-    // Retrieve tge users assessments and sort by date decending.
+    // Retrieve the users assessments and sort by date decending.
     let assessments = assessmentStore.getUserAssessments(loggedInUser.id);
     assessments.sort(function(a, b) {
       let dateA = new Date(a.dateTime), dateB = new Date(b.dateTime);
       return dateB - dateA;
     });  
+    
+    // Retieve the users goals to calculate counts of each goal status
+    let openCount = 0; let missedCount = 0; let achievedCount = 0;
+    let goalStatus;
+    let goals = goalStore.getUserGoals(loggedInUser.id);
+    for (let t = 0; t < goals.length; t++) {
+      goalStatus = analytics.calcGoalStatus(goals[t], assessments);
+      if (goalStatus === "Open") {
+        openCount ++;
+      } else if (goalStatus === "Missed") {
+        missedCount++; 
+      } else {
+        achievedCount++;
+      }
+    }
     
     // Latest weight is the assessment in position [0] or the starting weight if no assessments
     let latestWeight = loggedInUser.startingWeight;
@@ -42,9 +58,12 @@ const dashboard = {
       bmiCategory: calculatedBMICategory,
       idealWeightIndicator: analytics.checkIdealWeight(
         loggedInUser.id,
-        latestWeight
-      )
+        latestWeight),
+      openCount: openCount,
+      missedCount: missedCount,
+      achievedCount: achievedCount
     };
+    
     logger.info("about to render dashboard", viewData);
     response.render("dashboard", viewData);
   },
