@@ -2,6 +2,7 @@
 
 const logger = require("../utils/logger");
 const assessmentStore = require("../models/assessment-store");
+const goalStore = require("../models/goal-store");
 const userStore = require("../models/user-store");
 const uuid = require("uuid");
 const accounts = require("./accounts.js");
@@ -23,6 +24,21 @@ const memberdashboard = {
       let dateA = new Date(a.dateTime), dateB = new Date(b.dateTime);
       return dateB - dateA;
     });  
+    
+    // Retieve the users goals to calculate counts of each goal status
+    let openCount = 0; let missedCount = 0; let achievedCount = 0;
+    let goalStatus;
+    let goals = goalStore.getUserGoals(request.params.id);
+    for (let t = 0; t < goals.length; t++) {
+      goalStatus = analytics.calcGoalStatus(goals[t], assessments);
+      if (goalStatus === "Open") {
+        openCount ++;
+      } else if (goalStatus === "Missed") {
+        missedCount++; 
+      } else {
+        achievedCount++;
+      }
+    }
     
     // The latest weight will be the [0] assessment or the startingWeight if no assessments yet.
     let latestWeight = currentUser.startingWeight;
@@ -51,7 +67,10 @@ const memberdashboard = {
       idealWeightIndicator: analytics.checkIdealWeight(
         currentUser.id,
         latestWeight
-      )
+      ),
+      openCount: openCount,
+      missedCount: missedCount,
+      achievedCount: achievedCount
     };
     logger.info("about to render", memberAssessments);
     response.render("memberdashboard", viewData);
