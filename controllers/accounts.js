@@ -53,8 +53,15 @@ const accounts = {
   / object. It then adds this new user object to the user-store json file.
   /----------------------------------------------------------------------------------*/
   register(request, response) {
-    const newUser = request.body;
-    newUser.id = uuid.v1();
+    let newUser = {memberName: request.body.memberName,
+                   gender: request.body.gender,
+                   email: request.body.email,
+                   password: request.body.password,
+                   address: request.body.address,
+                   height: parseFloat(request.body.height),
+                   startingWeight: parseFloat(request.body.startingWeight),
+                   id: uuid.v1()
+    };
     userstore.addUser(newUser);
     logger.info(`registering ${newUser.email}`);
     response.redirect("/");

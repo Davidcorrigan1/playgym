@@ -93,7 +93,7 @@ const dashboard = {
       previousWeight = loggedInUser.startingWeight;
     }
 
-    if (request.body.weight > previousWeight) {
+    if (parseFloat(request.body.weight) > previousWeight) {
       weightIncrease = true;
     } else {
       weightIncrease = false;
@@ -108,12 +108,12 @@ const dashboard = {
       id: uuid.v1(),
       userid: loggedInUser.id,
       dateTime: dateTime,
-      weight: request.body.weight,
-      chest: request.body.chest,
-      thigh: request.body.thigh,
-      upperArm: request.body.upperArm,
-      waist: request.body.waist,
-      hips: request.body.hips,
+      weight: parseFloat(request.body.weight),
+      chest: parseFloat(request.body.chest),
+      thigh: parseFloat(request.body.thigh),
+      upperArm: parseFloat(request.body.upperArm),
+      waist: parseFloat(request.body.waist),
+      hips: parseFloat(request.body.hips),
       comment: "",
       weightIncrease: weightIncrease
     };
