@@ -173,7 +173,7 @@ const goals = {
       userid: loggedInUser.id,
       startDate: formattedCurrentDate, 
       targetDate: request.body.targetDate,
-      targetMeasurement: request.body.targetMeasurement,
+      targetMeasurement: parseFloat(request.body.targetMeasurement),
       measurementType: request.body.measurementType
     };
     

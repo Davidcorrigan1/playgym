@@ -29,6 +29,66 @@
       "height": "1.5",
       "startingWeight": "65",
       "id": "fe4191e0-db53-11ea-9192-452470c0ca71"
+    },
+    {
+      "memberName": "Seamus Corrigan",
+      "gender": "Male",
+      "email": "seamuscorrigan@gmail.com",
+      "password": "Pass1976",
+      "address": "Blackwater, Gorey, Wexford",
+      "height": "1.76",
+      "startingWeight": "87",
+      "id": "7d147070-e156-11ea-ad4b-79de003129a3"
+    },
+    {
+      "memberName": "Lucilla Corrigan",
+      "gender": "Female",
+      "email": "lucillacorrigan@gmail.com",
+      "password": "Pass1976",
+      "address": "Oulart, Gorey, Wexford",
+      "height": "1.76",
+      "startingWeight": "87.3",
+      "id": "33888210-e157-11ea-ad4b-79de003129a3"
+    },
+    {
+      "memberName": "Liz Corrigan",
+      "gender": "Female",
+      "email": "lizcorrigan@gmail.com",
+      "password": "Pass1976",
+      "address": "Castlebridge",
+      "height": "1.66",
+      "startingWeight": "66.3",
+      "id": "50aa6f60-e158-11ea-ad4b-79de003129a3"
+    },
+    {
+      "memberName": "Ben Corrigan",
+      "gender": "Male",
+      "email": "bencorrigan@gmail.com",
+      "password": "Pass1976",
+      "address": "Blackwater, Gorey, Wexford",
+      "height": "1.77",
+      "startingWeight": "67.33",
+      "id": "22760400-e159-11ea-ad4b-79de003129a3"
+    },
+    {
+      "memberName": "Fred Corrigan",
+      "gender": "Male",
+      "email": "fredcorrigan@gmail.com",
+      "password": "Pass1976",
+      "address": "Killincooley",
+      "height": 1.66,
+      "startingWeight": 45.5,
+      "id": "f4657350-e164-11ea-bc7e-b339c998840d"
+    },
+    {
+      "memberName": "Joan ",
+      "gender": "Female",
+      "email": "joancorrigan@gmail.com",
+      "password": "Pass1976",
+      "address": "Killincooley",
+      "height": "1.88",
+      "startingWeight": 45.5,
+      "id": "b3113510-e164-11ea-bc7e-b339c998840d"
     }
   ]
 }

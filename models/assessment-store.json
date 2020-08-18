@@ -308,19 +308,6 @@
       "weightIncrease": true
     },
     {
-      "id": "ae3ba890-db0b-11ea-b2c2-9ffb91d4f31a",
-      "userid": "f0c16240-d737-11ea-9236-578b467b638a",
-      "dateTime": "2020-8-10 13:16:20",
-      "weight": "77",
-      "chest": "34",
-      "thigh": "23",
-      "upperArm": "17",
-      "waist": "33",
-      "hips": "33",
-      "comment": "",
-      "weightIncrease": true
-    },
-    {
       "id": "de9e9740-db0b-11ea-b2c2-9ffb91d4f31a",
       "userid": "f0c16240-d737-11ea-9236-578b467b638a",
       "dateTime": "2020-8-10 13:17:41",
@@ -345,6 +332,32 @@
       "hips": "33",
       "comment": "",
       "weightIncrease": false
+    },
+    {
+      "id": "ae3ba890-db0b-11ea-b2c2-9ffb91d4f31a",
+      "userid": "f0c16240-d737-11ea-9236-578b467b638a",
+      "dateTime": "2020-8-10 13:16:20",
+      "weight": "77",
+      "chest": "34",
+      "thigh": "23",
+      "upperArm": "17",
+      "waist": "33",
+      "hips": "33",
+      "comment": "2020-8-10 13:16:20",
+      "weightIncrease": true
+    },
+    {
+      "id": "3ecede80-e166-11ea-8d97-b7e61795f6f0",
+      "userid": "b3113510-e164-11ea-bc7e-b339c998840d",
+      "dateTime": "2020-8-18 15:19:44",
+      "weight": 54.33,
+      "chest": 33.1,
+      "thigh": 34.3,
+      "upperArm": 12.4,
+      "waist": 34.2,
+      "hips": 33.2,
+      "comment": "",
+      "weightIncrease": true
     }
   ]
 }

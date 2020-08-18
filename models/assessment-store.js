@@ -36,7 +36,6 @@ const assessmentStore = {
     this.store.removeAll(this.collection);
     this.store.save();
   },
-
 };
 
 module.exports = assessmentStore;
