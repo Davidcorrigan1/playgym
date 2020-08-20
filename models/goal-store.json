@@ -1,76 +1,44 @@
 {
   "goalCollection": [
     {
-      "id": "54696f20-daf5-11ea-836a-4f5f08a91905",
-      "userid": "9135cee0-d711-11ea-8d9f-27db894e89a6",
-      "startDate": "2020-8-10",
-      "targetDate": "2020-08-30",
-      "targetMeasurement": "32",
-      "measurementType": "waist"
-    },
-    {
-      "id": "670ac660-dafa-11ea-8b61-331a01175491",
-      "userid": "9135cee0-d711-11ea-8d9f-27db894e89a6",
-      "startDate": "2020-8-10",
-      "targetDate": "2020-08-01",
-      "targetMeasurement": "32",
-      "measurementType": "waist"
-    },
-    {
-      "id": "9cb14a20-db07-11ea-b2c2-9ffb91d4f31a",
-      "userid": "9135cee0-d711-11ea-8d9f-27db894e89a6",
-      "startDate": "2020-8-10",
-      "targetDate": "2021-01-05",
-      "targetMeasurement": "65",
+      "id": "a2c8aeb0-e2cf-11ea-a7d6-99152ba1d27d",
+      "userid": "0b7dc180-e2cf-11ea-a7d6-99152ba1d27d",
+      "startDate": "2020-8-20",
+      "targetDate": "2020-09-03",
+      "targetMeasurement": 72,
       "measurementType": "weight"
     },
     {
-      "id": "26c8da20-db08-11ea-b2c2-9ffb91d4f31a",
-      "userid": "f0c16240-d737-11ea-9236-578b467b638a",
-      "startDate": "2020-8-10",
-      "targetDate": "2020-08-20",
-      "targetMeasurement": "67",
-      "measurementType": "weight"
-    },
-    {
-      "id": "92b85aa0-db0b-11ea-b2c2-9ffb91d4f31a",
-      "userid": "f0c16240-d737-11ea-9236-578b467b638a",
-      "startDate": "2020-8-10",
-      "targetDate": "2020-08-08",
-      "targetMeasurement": "23",
-      "measurementType": "waist"
-    },
-    {
-      "id": "8189bfe0-db4b-11ea-a058-a9ccee573e90",
-      "userid": "5fd116f0-db4b-11ea-a058-a9ccee573e90",
-      "startDate": "2020-8-10",
-      "targetDate": "2020-08-31",
-      "targetMeasurement": "70",
-      "measurementType": "weight"
-    },
-    {
-      "id": "c5eb56f0-e166-11ea-8d97-b7e61795f6f0",
-      "userid": "b3113510-e164-11ea-bc7e-b339c998840d",
-      "startDate": "2020-8-18",
+      "id": "af4b3270-e2cf-11ea-a7d6-99152ba1d27d",
+      "userid": "0b7dc180-e2cf-11ea-a7d6-99152ba1d27d",
+      "startDate": "2020-8-20",
       "targetDate": "2020-08-27",
-      "targetMeasurement": 55.6,
+      "targetMeasurement": 77,
       "measurementType": "weight"
     },
     {
-      "id": "f3e275c0-e166-11ea-8d97-b7e61795f6f0",
-      "userid": "b3113510-e164-11ea-bc7e-b339c998840d",
-      "startDate": "2020-8-18",
-      "targetDate": "2020-08-21",
-      "targetMeasurement": 54.34,
+      "id": "bd7e9a80-e2cf-11ea-a7d6-99152ba1d27d",
+      "userid": "0b7dc180-e2cf-11ea-a7d6-99152ba1d27d",
+      "startDate": "2020-8-20",
+      "targetDate": "2020-08-13",
+      "targetMeasurement": 70,
       "measurementType": "weight"
     },
     {
-      "id": "06518bb0-e167-11ea-8d97-b7e61795f6f0",
-      "userid": "b3113510-e164-11ea-bc7e-b339c998840d",
-      "startDate": "2020-8-18",
-      "targetDate": "2020-08-29",
-      "targetMeasurement": 54.31,
-      "measurementType": "weight"
+      "id": "2ed9c4c0-e2d0-11ea-a7d6-99152ba1d27d",
+      "userid": "0a3d0eb0-e2d0-11ea-a7d6-99152ba1d27d",
+      "startDate": "2020-8-20",
+      "targetDate": "2020-09-04",
+      "targetMeasurement": 30,
+      "measurementType": "waist"
+    },
+    {
+      "id": "ee056f70-e2d0-11ea-a7d6-99152ba1d27d",
+      "userid": "7d47e4c0-e2d0-11ea-a7d6-99152ba1d27d",
+      "startDate": "2020-8-20",
+      "targetDate": "2020-08-27",
+      "targetMeasurement": 30.5,
+      "measurementType": "waist"
     }
   ]
 }
